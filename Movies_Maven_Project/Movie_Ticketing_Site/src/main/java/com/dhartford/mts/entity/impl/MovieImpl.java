@@ -14,9 +14,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.dhartford.mts.entity.interf.Genre;
+//import com.dhartford.mts.entity.interf.Genre;
 import com.dhartford.mts.entity.interf.Movie;
-import com.dhartford.mts.entity.interf.Rating;
+//import com.dhartford.mts.entity.interf.Rating;
 import com.dhartford.mts.entity.interf.Theater;
 
 @Entity
@@ -33,16 +33,16 @@ public class MovieImpl implements Movie {
 	
 	@ManyToOne(targetEntity=GenreImpl.class)
 	@JoinColumn(name="genres_name")	
-	private Genre genre;
+	private String genre;
 	
 	@Column(name="runtime")
 	private int runtime;
 	
 	@ManyToOne(targetEntity=RatingImpl.class)
 	@JoinColumn(name="ratings_name")
-	private Rating rating;
+	private String rating;
 	
-	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "theatersShowingMovie", targetEntity=TheaterImpl.class)	
+	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "theatersShowingMovie", targetEntity=TheaterImpl.class)	 //is this mapped right???
 	private List<Theater> theaters;
 	
 	
@@ -68,11 +68,11 @@ public class MovieImpl implements Movie {
 		this.movieName = movieName;
 	}
 	
-	public Genre getGenre() {
+	public String getGenre() {
 		return this.genre;
 	}
 	
-	public void setGenre(Genre genre) {
+	public void setGenre(String genre) {
 		this.genre = genre;
 	}
 	
@@ -84,11 +84,11 @@ public class MovieImpl implements Movie {
 		this.runtime = runtime;
 	}
 	
-	public Rating getRating() {
+	public String getRating() {
 		return this.rating;
 	}
 	
-	public void setRating(Rating rating) {
+	public void setRating(String rating) {
 		this.rating = rating;
 	}
 	

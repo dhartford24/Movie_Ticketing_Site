@@ -38,15 +38,5 @@ public class TestMovieSearchService extends AbstractJUnit4SpringContextTests {
 		System.out.println(movieGet);
 		
 	} //end testGetMovieViaName
-	
-	@Test
-	public void testIsMovieComingSoon() {
-		
-		Assert.assertEquals(true, movieSearchService.getMoviesComingSoon(true));
-		Assert.assertEquals(false, movieSearchService.getMoviesComingSoon(false));
-		Assert.assertEquals(false, movieSearchService.getMoviesComingSoon(true));
-		Assert.assertEquals(true, movieSearchService.getMoviesComingSoon(false));
-		
-	} //end testIsMovieComingSoon
 
 }

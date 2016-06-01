@@ -6,9 +6,9 @@ public interface Movie {
 
 	long getMovieId();
 	String getMovieName();
-	Genre getGenre();
+	String getGenre();
 	int getRuntime();
-	Rating getRating();
+	String getRating();
 	
 	List<Theater> getTheaters();
 	void addTheater(Theater theater);

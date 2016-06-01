@@ -18,7 +18,7 @@ public class TestMovieRepository extends AbstractTransactionalJUnit4SpringContex
 	private MovieRepository movieRepository;
 
 	@Test
-	public void addAndGetUser(){
+	public void addAndGetMovie(){
 		MovieImpl newMovie = new MovieImpl();
 		newMovie.setMovieName("test"+new Random().nextInt(99999));
 		newMovie.setRuntime(123);
